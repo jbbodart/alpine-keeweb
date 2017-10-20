@@ -24,8 +24,8 @@ RUN wget https://github.com/keeweb/keeweb-plugins/archive/master.zip; \
     rm -rf keeweb-plugins-master \
     rm keeweb/plugins/CNAME
 
-COPY 10-basic.conf 20-webdav.conf $CONF_PATH
-COPY 20-webdav.sh $START_PATH
+COPY 10-basic.conf 20-webdav.conf $CONF_PATH/
+COPY 20-webdav.sh $START_PATH/
 COPY run.sh /usr/local/bin
 
 WORKDIR $WWW_ROOT
