@@ -32,4 +32,4 @@ WORKDIR $WWW_ROOT
 
 EXPOSE 80
 
-CMD ["run.sh"]
+CMD ["/usr/local/bin/run.sh"]
