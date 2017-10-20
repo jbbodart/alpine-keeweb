@@ -2,7 +2,7 @@ FROM alpine:3.6
 MAINTAINER jbbodart <jbbodart@yahoo.com>
 
 ENV WWW_ROOT=/keeweb \
-  CONF_PATH=/etc/lighttpd/conf.d \
+	CONF_PATH=/etc/lighttpd/conf.d \
 	START_PATH=/usr/local/bin/start.d
 
 RUN apk add --no-cache lighttpd lighttpd-mod_auth lighttpd-mod_webdav apache2-utils openssl \
@@ -24,7 +24,8 @@ RUN wget https://github.com/keeweb/keeweb-plugins/archive/master.zip; \
     rm -rf keeweb-plugins-master \
     rm keeweb/plugins/CNAME
 
-COPY 10-basic.conf 11-compress.conf $CONF_PATH/
+COPY 10-basic.conf 20-webdav.conf $CONF_PATH
+COPY 20-webdav.sh $START_PATH
 COPY run.sh /usr/local/bin
 
 WORKDIR $WWW_ROOT
