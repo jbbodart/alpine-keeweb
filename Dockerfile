@@ -26,9 +26,9 @@ RUN wget https://github.com/keeweb/keeweb-plugins/archive/master.zip; \
 
 COPY 10-basic.conf 20-webdav.conf $CONF_PATH/
 COPY 20-webdav.sh $START_PATH/
-COPY run.sh /usr/local/bin/
+COPY run.sh /
 
-WORKDIR /usr/local/bin/
+RUN chmod +x run.sh $START_PATH/20-webdav.sh
 
 EXPOSE 80
 
