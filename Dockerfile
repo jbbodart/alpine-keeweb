@@ -28,8 +28,8 @@ COPY 10-basic.conf 20-webdav.conf $CONF_PATH/
 COPY 20-webdav.sh $START_PATH/
 COPY run.sh /usr/local/bin/
 
-WORKDIR $WWW_ROOT
+WORKDIR /usr/local/bin/
 
 EXPOSE 80
 
-CMD ["run.sh"]
+CMD ["./run.sh"]
