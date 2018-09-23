@@ -1,11 +1,12 @@
-FROM alpine:3.6
+FROM alpine:3.8
 MAINTAINER jbbodart <jbbodart@yahoo.com>
 
 ENV WWW_ROOT=/keeweb \
 	CONF_PATH=/etc/lighttpd/conf.d \
 	START_PATH=/usr/local/bin/start.d
 
-RUN apk add --no-cache lighttpd lighttpd-mod_auth lighttpd-mod_webdav apache2-utils openssl \
+RUN apk -U upgrade 
+	&& apk add --no-cache lighttpd lighttpd-mod_auth lighttpd-mod_webdav apache2-utils openssl \
 	&& rm -rf /var/www/localhost \
 	&& mkdir -p $CONF_PATH $START_PATH
 
