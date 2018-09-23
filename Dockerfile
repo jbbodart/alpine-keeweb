@@ -5,7 +5,7 @@ ENV WWW_ROOT=/keeweb \
 	CONF_PATH=/etc/lighttpd/conf.d \
 	START_PATH=/usr/local/bin/start.d
 
-RUN apk -U upgrade 
+RUN apk -U upgrade \
 	&& apk add --no-cache lighttpd lighttpd-mod_auth lighttpd-mod_webdav apache2-utils openssl \
 	&& rm -rf /var/www/localhost \
 	&& mkdir -p $CONF_PATH $START_PATH
