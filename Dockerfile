@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:3.9
 MAINTAINER jbbodart <jbbodart@yahoo.com>
 
 ENV WWW_ROOT=/keeweb \
